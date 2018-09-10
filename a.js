@@ -1,13 +1,11 @@
-// call
-function vidu(diemThi,callback){
-	// kiem tra diem dang so hay chữ
-	if( typeof diemThi!== "number" )
-		return callback(" điểm nhập ở dạng số");
-	//  nếu điểm thi lớn hơn 4 truyền cho callback tham số " bạn đã qua môn"
-	if ( diemThi>=4) return callback("bạn đã qua môn");
-	else return callback(" chúc mừng bạn đã tạch");
-}
-vidu(3.9,function(ketQua){
-	// hàm callback
-	console.log(ketQua);
+/* setTimeout */
+let vidu=(x,y,callback)=>{
+	setTimeout(()=> {
+		if(x+y>5){
+			return callback (' tổng lớn hơn 5');
+		}else return callback("tổng nhỏ hơn 5");
+	},2000	);
+};
+vidu(1,3, result => {
+	console.log(result);
 });
